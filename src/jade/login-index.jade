@@ -1,0 +1,249 @@
+doctype html
+html(lang='')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Hangurs
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7', crossorigin='anonymous') 
+    link(rel='stylesheet', href='/css/hangurs.min.css')
+    link(href='https://fonts.googleapis.com/css?family=Oswald:400,500', rel='stylesheet')
+    link(rel='apple-touch-icon', sizes='57x57', href='/favicon/apple-icon-57x57.png')
+    link(rel='apple-touch-icon', sizes='60x60', href='/favicon/apple-icon-60x60.png')
+    link(rel='apple-touch-icon', sizes='72x72', href='/favicon/apple-icon-72x72.png')
+    link(rel='apple-touch-icon', sizes='76x76', href='/favicon/apple-icon-76x76.png')
+    link(rel='apple-touch-icon', sizes='114x114', href='/favicon/apple-icon-114x114.png')
+    link(rel='apple-touch-icon', sizes='120x120', href='/favicon/apple-icon-120x120.png')
+    link(rel='apple-touch-icon', sizes='144x144', href='/favicon/apple-icon-144x144.png')
+    link(rel='apple-touch-icon', sizes='152x152', href='/favicon/apple-icon-152x152.png')
+    link(rel='apple-touch-icon', sizes='180x180', href='/favicon/apple-icon-180x180.png')
+    link(rel='icon', type='image/png', sizes='192x192', href='/favicon/android-icon-192x192.png')
+    link(rel='icon', type='image/png', sizes='32x32', href='/favicon/favicon-32x32.png')
+    link(rel='icon', type='image/png', sizes='96x96', href='/favicon/favicon-96x96.png')
+    link(rel='icon', type='image/png', sizes='16x16', href='/favicon/favicon-16x16.png')
+    link(rel='manifest', href='/favicon/manifest.json')
+    meta(name='msapplication-TileColor', content='#03264B')
+    meta(name='msapplication-TileImage', content='/favicon/ms-icon-144x144.png')
+    meta(name='theme-color', content='#03264B')
+    script(src='/js/hangurs.min.js')
+    script(src='//code.jquery.com/jquery-1.10.2.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    
+    script(type='text/javascript').
+      $(document).ready(function(){
+      $('#itemslider').carousel({ interval: 10000 });
+      $('.carousel-showmanymoveone .item').each(function(){
+      var itemToClone = $(this);
+      for (var i=1;i<6;i++) {
+      itemToClone = itemToClone.next();
+      if (!itemToClone.length) {
+      itemToClone = $(this).siblings(':first');
+      }
+      itemToClone.children(':first-child').clone()
+      .addClass("cloneditem-"+(i))
+      .appendTo($(this));
+      }
+      });
+      });
+  body
+    header.head-login
+
+      .login-account   
+        .login-overlay    
+        .container
+          .col-md-12
+            a(href='index.html')
+             | Home
+            a(href='#') 
+             | My Hangur
+            a(href='#') 
+             | Requests
+            a(href='') 
+              | Add Item
+
+            .login-profile.dropdown
+                span Aidan Carr
+                img.img-responsive.dropdown-toggle(type='button',src='/images/profilelogin.png', alt='Hangurs', data-toggle='dropdown')
+            
+            
+                ul.dropdown-menu
+                  li
+                    a(href='#') Billing
+                  li
+                    a(href='#') Wallet
+                  li
+                    a(href='#') Logout
+          .col-md-12.search-login
+            img.img-responsive(src='/images/hangur-white.png', alt='Hangurs')
+            h2 Find Clothes Around You
+            .form-group
+              .input-group
+                span.input-group-btn
+                  select.form-control
+                    option Select Type
+                    option Top
+                    option Bottom
+                    option Outwear
+                    option Dress
+                    option Shoes 
+                    option Bags
+
+                span.input-group-btn
+                  select#nr.form-control(name='nr')
+                    option(value='') What Size ?
+                    option(value='') 0xxs
+                    option(value='') 2xs
+                    option(value='') 4s
+                    option(value='') 6s
+                    option(value='') 8l
+                    option(value='') 10xl
+                    option(value='') 12 2xl
+                    option(value='') 14 3xl
+                span.input-group-btn
+                  select#nu.form-control.color-select(name='nu')
+                    option(value='') What Color ?
+                    option(value='')  Red
+                      span.red                      
+                    option(value='') Blue
+                    option(value='') Grey
+                    option(value='') Green
+                    option(value='') White
+                    
+
+                span.input-group-btn1
+                  i.fa.fa-search 
+                
+    .container
+      #slider-text
+        .col-md-12
+          h2 Popular Near You
+    // Item slider
+    .container
+      .row
+        .col-xs-12.col-sm-12.col-md-12
+          #itemslider.carousel.carousel-showmanymoveone.slide
+            .carousel-inner
+              .item.active
+                .col-xs-12.col-sm-6.col-md-2
+                  .hover-div
+                    img.img-responsive.center-block(src='images/first.png')
+                    a(href='#')
+                      i.fa.fa-search 
+                  h4
+                   i.fa.fa-map-marker
+                   | 0.25km
+              .item
+                .col-xs-12.col-sm-6.col-md-2
+                  .hover-div
+                    img.img-responsive.center-block(src='images/second.png')
+                    a(href='#')
+                      i.fa.fa-search 
+                  h4
+                   i.fa.fa-map-marker
+                   | 0.25km
+              .item
+                .col-xs-12.col-sm-6.col-md-2
+                  .hover-div
+                    img.img-responsive.center-block(src='images/third.png')
+                    a(href='#')
+                      i.fa.fa-search 
+                  h4
+                   i.fa.fa-map-marker
+                   | 0.25km
+              .item
+                .col-xs-12.col-sm-6.col-md-2
+                  .hover-div
+                    img.img-responsive.center-block(src='images/fourth.png')
+                    a(href='#')
+                      i.fa.fa-search 
+                  h4
+                   i.fa.fa-map-marker
+                   | 0.25km
+              .item
+                .col-xs-12.col-sm-6.col-md-2
+                  .hover-div
+                    img.img-responsive.center-block(src='images/second.png')
+                    a(href='#')
+                      i.fa.fa-search 
+                  h4
+                   i.fa.fa-map-marker
+                   | 0.25km
+              .item
+                .col-xs-12.col-sm-6.col-md-2
+                  .hover-div
+                    img.img-responsive.center-block(src='images/third.png')
+                    a(href='#')
+                      i.fa.fa-search 
+                  h4
+                   i.fa.fa-map-marker
+                   | 0.25km
+              .item
+                .col-xs-12.col-sm-6.col-md-2
+                  .hover-div
+                    img.img-responsive.center-block(src='images/fifth.png')
+                    a(href='#')
+                      i.fa.fa-search 
+                  h4
+                   i.fa.fa-map-marker
+                   | 0.25km
+
+            #slider-control
+              a.left.carousel-control(href='#itemslider', data-slide='prev')
+                i.fa.fa-chevron-left
+              a.right.carousel-control(href='#itemslider', data-slide='next')
+                i.fa.fa-chevron-right
+    .login-map
+      #slider-text
+        .col-md-12
+          h2 Browse by Nearest
+          h4
+           i.fa.fa-map-marker
+           | London, United Kingdom
+      img.img-responsive(src='/images/login-image.jpg')
+    .container-fluid
+      #slider-text
+        .col-md-12
+          h2 What's New In London
+      .col-md-10.col-md-offset-1
+        .col-md-6.col-sm-6.col-xs-12
+          .box
+            .icon
+              .image
+                img.img-responsive.center-block(src='images/testimonial.png')
+              .info
+                h3 
+                  span.green Fiona 
+                  | added 3 new items to her hangur
+                p
+                  | 3 minutes ago | 0.25 Km away
+                ul
+                 li 
+                    img.img-responsive(src='images/first.png')
+                 li 
+                    img.img-responsive(src='images/second.png')
+                 li 
+                    img.img-responsive(src='images/third.png')
+
+        .col-md-6.col-sm-6.col-xs-12
+          .box
+            .icon
+              .image
+                img.img-responsive.center-block(src='images/testimonial.png')
+              .info
+                h3 
+                  span.green Jessica 
+                  | added 3 new items to her hangur
+                p
+                  | 3 minutes ago | 0.25 Km away
+                ul
+                 li 
+                    img.img-responsive(src='images/first.png')
+                 li 
+                    img.img-responsive(src='images/second.png')
+                 li 
+                    img.img-responsive(src='images/third.png')
+    .container.loading-icon
+      h4 Load more ...    
+        i.fa.fa-spinner
+    include components/footer.jade

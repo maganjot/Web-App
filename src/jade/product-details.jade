@@ -1,0 +1,113 @@
+doctype html
+html(lang='')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Hangurs
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7', crossorigin='anonymous') 
+    link(rel='stylesheet', href='/css/hangurs.min.css')
+    link(href='https://fonts.googleapis.com/css?family=Oswald:400,500', rel='stylesheet')
+    link(rel='apple-touch-icon', sizes='57x57', href='/favicon/apple-icon-57x57.png')
+    link(rel='apple-touch-icon', sizes='60x60', href='/favicon/apple-icon-60x60.png')
+    link(rel='apple-touch-icon', sizes='72x72', href='/favicon/apple-icon-72x72.png')
+    link(rel='apple-touch-icon', sizes='76x76', href='/favicon/apple-icon-76x76.png')
+    link(rel='apple-touch-icon', sizes='114x114', href='/favicon/apple-icon-114x114.png')
+    link(rel='apple-touch-icon', sizes='120x120', href='/favicon/apple-icon-120x120.png')
+    link(rel='apple-touch-icon', sizes='144x144', href='/favicon/apple-icon-144x144.png')
+    link(rel='apple-touch-icon', sizes='152x152', href='/favicon/apple-icon-152x152.png')
+    link(rel='apple-touch-icon', sizes='180x180', href='/favicon/apple-icon-180x180.png')
+    link(rel='icon', type='image/png', sizes='192x192', href='/favicon/android-icon-192x192.png')
+    link(rel='icon', type='image/png', sizes='32x32', href='/favicon/favicon-32x32.png')
+    link(rel='icon', type='image/png', sizes='96x96', href='/favicon/favicon-96x96.png')
+    link(rel='icon', type='image/png', sizes='16x16', href='/favicon/favicon-16x16.png')
+    link(rel='manifest', href='/favicon/manifest.json')
+    meta(name='msapplication-TileColor', content='#03264B')
+    meta(name='msapplication-TileImage', content='/favicon/ms-icon-144x144.png')
+    meta(name='theme-color', content='#03264B')
+    script(src='/js/hangurs.min.js')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+  body
+    header.head-login
+      .header-inner
+        .container
+          ul 
+            li
+              a(href='request.html') 
+                i.material-icons touch_app
+                | Requests
+              a(href='')
+                i.material-icons notifications 
+                | Notifications
+              a(href='')
+                i.material-icons add_box 
+                | New Item
+      .login-account       
+        .container
+          .col-md-2.login-img
+            img.img-responsive(src='/images/logo_blue.svg', alt='Hangurs')
+          .col-md-10
+            a(href='account-details.html')
+             | Account Details
+            a(href='wallet.html') 
+             | Wallet
+            a(href='privacy.html') 
+             | Privacy
+            a(href='') 
+              | Help
+             a(href='') 
+              | About
+            a(href='index.html')
+                | Log Out
+            .login-profile
+                img.img-responsive(src='/images/admin.jpg', alt='Hangurs')
+                span celiatania 
+      .product-details
+        .container
+          h2.inner-heading Fluffy Shortdeaus short dress
+          .col-md-12.product-slider
+            .col-md-6
+              img.img-responsive(src='/images/dress.png', alt='Hangurs')
+            .col-md-6
+              ul
+                li.green-bg
+                  a(href='#') $14.99
+                  span per day
+                li.green-bg
+                  a(href='#') 2XL
+                  span size
+                li.orange-bg
+                  a(href='#') 
+                    i.fa.fa-heart-o
+                li.blue-bg
+                  a(href='send-request.html')
+                    i.fa.fa-sign-out
+                    | SEND A REQUEST
+          .col-md-12.product-heading
+            h4 Fluffy Shortdeaus short dress
+            h5 
+              i.fa.fa-heart
+              | Celia T & 3 other people
+            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+          .col-md-12.product-all
+            .col-md-6
+              .col-md-3
+                img.img-responsive.img-profile(src='/images/login-profile.jpg', alt='Hangurs')
+              .col-md-9
+                h6 More by
+                h5 Fiona Queen
+            .col-md-6
+              .col-md-12
+                img.img-responsive.imglogo(src='/images/logo_blue.svg', alt='Hangurs')
+            .select-images.pro-img
+              .col-md-4
+                img.img-responsive(src='/images/dress.png')
+              .col-md-4
+                img.img-responsive(src='/images/shoes.jpg')
+              .col-md-4
+                img.img-responsive(src='/images/jeans.jpg')
+
+
+            
+    include components/footer.jade
